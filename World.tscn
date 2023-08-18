@@ -1,0 +1,207 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Player2.gd" type="Script" id=2]
+[ext_resource path="res://Ball.gd" type="Script" id=3]
+[ext_resource path="res://World.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 337.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 337.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6, 34.5 )
+
+[sub_resource type="PhysicsMaterial" id=6]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id=4]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 180 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 20.0, 80.0, 188.0, 360.0 ],
+"_edit_vertical_guides_": [ -14.0, 661.0, 324.0, 323.0 ]
+}
+
+[node name="World-Decoration" type="Node" parent="."]
+
+[node name="World-Up" type="StaticBody2D" parent="World-Decoration"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World-Decoration/World-Up"]
+position = Vector2( 323.5, 0 )
+shape = SubResource( 1 )
+
+[node name="World-Down" type="StaticBody2D" parent="World-Decoration"]
+position = Vector2( 0, 360 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World-Decoration/World-Down"]
+position = Vector2( 323.5, 0 )
+shape = SubResource( 2 )
+
+[node name="Upside-Rect" type="ColorRect" parent="World-Decoration"]
+margin_right = 640.0
+margin_bottom = 10.0
+
+[node name="Downside-Rect" type="ColorRect" parent="World-Decoration"]
+margin_top = 350.0
+margin_right = 640.0
+margin_bottom = 360.0
+
+[node name="Center-lines" type="Node" parent="World-Decoration"]
+
+[node name="Line-1" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 20.0
+margin_right = 326.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-2" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 50.0
+margin_right = 326.0
+margin_bottom = 65.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-3" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 80.0
+margin_right = 326.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-4" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 110.0
+margin_right = 326.0
+margin_bottom = 125.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-5" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 140.0
+margin_right = 326.0
+margin_bottom = 155.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-6" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 170.0
+margin_right = 326.0
+margin_bottom = 185.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-7" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 200.0
+margin_right = 326.0
+margin_bottom = 215.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-8" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 233.0
+margin_right = 326.0
+margin_bottom = 248.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-9" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 267.0
+margin_right = 326.0
+margin_bottom = 282.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-10" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 297.0
+margin_right = 326.0
+margin_bottom = 312.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-11" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 297.0
+margin_right = 326.0
+margin_bottom = 312.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Line-12" type="ColorRect" parent="World-Decoration/Center-lines"]
+margin_left = 321.0
+margin_top = 323.0
+margin_right = 326.0
+margin_bottom = 338.0
+rect_pivot_offset = Vector2( 9, 20 )
+
+[node name="Score-Text-Left" type="Label" parent="."]
+margin_left = 239.0
+margin_top = 20.0
+margin_right = 290.0
+margin_bottom = 80.0
+text = "0"
+
+[node name="Score-Text-Right" type="Label" parent="."]
+margin_left = 387.0
+margin_top = 20.0
+margin_right = 438.0
+margin_bottom = 80.0
+text = "0"
+
+[node name="Player" type="KinematicBody2D" parent="." groups=["Player"]]
+position = Vector2( 16, 153 )
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+margin_right = 12.0
+margin_bottom = 69.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 6, 34.5 )
+shape = SubResource( 3 )
+
+[node name="Player2" type="KinematicBody2D" parent="." groups=["Player"]]
+position = Vector2( 613, 153 )
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="Player2"]
+margin_right = 12.0
+margin_bottom = 69.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2( 6, 34.5 )
+shape = SubResource( 3 )
+
+[node name="Ball" type="RigidBody2D" parent="." groups=["Ball"]]
+position = Vector2( 324, 188 )
+physics_material_override = SubResource( 6 )
+gravity_scale = 0.0
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource( 4 )
+
+[node name="Area-Player2" type="Area2D" parent="."]
+position = Vector2( 649, 170 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area-Player2"]
+position = Vector2( 0, 10 )
+shape = SubResource( 5 )
+
+[node name="Area-Player" type="Area2D" parent="."]
+position = Vector2( -5, 170 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area-Player"]
+position = Vector2( 0, 10 )
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="Ball" to="Ball" method="_on_Ball_body_entered"]
+[connection signal="body_entered" from="Area-Player2" to="." method="_on_AreaPlayer2_body_entered"]
+[connection signal="body_entered" from="Area-Player" to="." method="_on_AreaPlayer_body_entered"]
